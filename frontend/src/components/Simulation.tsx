@@ -95,7 +95,7 @@ export const Simulation: React.FC = () => {
     setScenarioTime(parseInt(ScenarioList[0]?.scenarioTime) - 1 || 0);
   };
 
-  const handleDeleteEvent = (vehicleId) => {
+  const handleDeleteEvent = (vehicleId:number) => {
     try{
       const resposne = deleteVehicle(vehicleId);
       console.log('delete vehicle in the simulation successful');
