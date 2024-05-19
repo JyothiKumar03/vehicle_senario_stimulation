@@ -2,6 +2,8 @@
 
 This project is a React.js application for creating, displaying, updating, and deleting scenarios and vehicles. It allows users to simulate vehicle movements based on scenario and vehicle parameters.
 
+Live Project URL : https://664a114cda79e8cbd4b95ecf--transcendent-rugelach-2de373.netlify.app/
+
 ## Features
 
 - **Scenario Management**: Users can create, display, update, and delete scenarios. Each scenario includes an ID, name, and time.
