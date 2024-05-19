@@ -14,28 +14,32 @@ const port = process.env.PORT;
 
 app.use(bodyParser.json());
 
-const API_URL = process.env.API_URL; 
+// const API_URL = process.env.API_URL; 
 
-// CORS options
-const options: cors.CorsOptions = {
-  allowedHeaders: [
-    'Origin',
-    'X-Requested-With',
-    'Content-Type',
-    'Accept',
-    'X-Access-Token',
-  ],
-  credentials: true,
-  methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
-  origin: "*",
-  preflightContinue: false,
-};
+// // CORS options
+// const options: cors.CorsOptions = {
+//   allowedHeaders: [
+//     'Origin',
+//     'X-Requested-With',
+//     'Content-Type',
+//     'Accept',
+//     'X-Access-Token',
+//   ],
+//   credentials: true,
+//   methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
+//   origin: "*",
+//   preflightContinue: false,
+// };
 
-// Use CORS middleware
-app.use(cors(options));
+// // Use CORS middleware
+app.use(cors({ origin: '*' }));
 
 app.use('/scenarios', scenarioRoutes);
 app.use('/vehicles', vehicleRoutes);
+
+app.get('/helloworld',(req,res)=>{
+  res.send('Hello World')
+})
 
 // Error handling middleware
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {

@@ -6,7 +6,7 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "../dist", // Set the output directory for compiled files
+    "outDir": "./dist", // Set the output directory for compiled files
     "rootDir": "." // Set the root directory for TypeScript source files
   },
   "include": [

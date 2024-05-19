@@ -34,6 +34,7 @@ export const getSenarios = (req: Request, res: Response) => {
 export const addSenario = (req: Request, res: Response) => {
     try {
         const data = readData();
+        console.log(data);
         const newScenario: Scenario = { id: Date.now(), ...req.body };
         data.scenarios.push(newScenario);
         writeData(data);

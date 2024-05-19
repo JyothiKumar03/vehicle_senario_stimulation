@@ -1,30 +1,28 @@
-ARG NODE_VERSION=21.1.0
+# Use the official Node.js 16 image as a parent image
+FROM node:16-alpine
 
-FROM node:${NODE_VERSION}-alpine
+# Set the working directory in the Docker container
+WORKDIR /usr/src/app
 
-# Use production node environment by default.
-ENV NODE_ENV production
-
-# Set the working directory inside the container.
-WORKDIR /app
-
-# Copy package.json and package-lock.json to the working directory.
+# Copy the package.json and package-lock.json (if available) files into the working directory
 COPY package*.json ./
 
-# Install dependencies.
+# Install dependencies including 'devDependencies' for building the TypeScript
 RUN npm install
 
-# Install nodemon globally.
-RUN npm install -g nodemon
-
-# Copy the rest of the source files into the image.
+# Copy the rest of your application's source code from your host to your image's filesystem.
 COPY . .
 
-# Compile TypeScript files.
+# Use TypeScript Compiler to build the project - this assumes you have a tsconfig.json
 RUN npm run build
 
-# Expose the port that the application listens on.
+# Your application's default port, you might need to adjust if different
 EXPOSE 8080
 
-# Run the application using nodemon.
-CMD ["nodemon", "dist/index.js"]
+# Command to run the app using the compiled JavaScript
+CMD npm run dev
+
+
+
+
+

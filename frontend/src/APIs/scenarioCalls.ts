@@ -2,7 +2,8 @@ import { Scenario } from '../types/types';
 import axios from 'axios'
 
 const ScenarioAPIs = axios.create({
-    baseURL : `http://localhost:8080`
+    baseURL : `https://vechile-backend-t67a.onrender.com/`//
+    // baseURL : `http://localhost:8080`
 })
 
 export const addSenario = async(scenarioData : Scenario) => {
