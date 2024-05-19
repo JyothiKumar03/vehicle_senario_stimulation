@@ -37,9 +37,9 @@ app.use(cors({ origin: '*' }));
 app.use('/scenarios', scenarioRoutes);
 app.use('/vehicles', vehicleRoutes);
 
-app.get('/helloworld',(req,res)=>{
-  res.send('Hello World')
-})
+app.get('/', (req: Request, res: Response) => {
+  res.send('Server is running');
+});
 
 // Error handling middleware
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
