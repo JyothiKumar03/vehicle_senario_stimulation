@@ -14,11 +14,14 @@ COPY package*.json ./
 # Install dependencies.
 RUN npm install
 
+# Install nodemon globally.
+RUN npm install -g nodemon
+
 # Copy the rest of the source files into the image.
 COPY . .
 
 # Expose the port that the application listens on.
 EXPOSE 8080
 
-# Define the default command to run when the container starts.
-CMD ["npm", "run", "dev"]
+# Run the application using nodemon.
+CMD ["nodemon", "index.ts"]
