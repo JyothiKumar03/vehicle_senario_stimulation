@@ -1,8 +1,8 @@
 # React.js Vehicle Simulation Application
 
-This project is a React.js application for creating, displaying, updating, and deleting scenarios and vehicles. It allows users to simulate vehicle movements based on scenario and vehicle parameters.
+This project is a React.js application for visualizing scenarios and vehicles in a mesh  using CRUD operations. It allows users to simulate vehicle movements based on scenario and vehicle parameters.
 
-Live Project URL : https://664a114cda79e8cbd4b95ecf--transcendent-rugelach-2de373.netlify.app/
+**Live Project URL ** : https://664a114cda79e8cbd4b95ecf--transcendent-rugelach-2de373.netlify.app/
 
 ## Features
 
@@ -16,7 +16,7 @@ Live Project URL : https://664a114cda79e8cbd4b95ecf--transcendent-rugelach-2de37
 The project consists of three main components:
 
 1. **Frontend**: The React.js frontend built using TypeScript and Vite.
-2. **Backend**: The Node.js backend for handling CRUD operations and serving data stored in a JSON file.
+2. **Backend**: The Node.js, Typescript backend for handling CRUD operations and serving data stored in a JSON file.
 3. **Data Storage**: Data is stored in a JSON file on the backend server.
 
 ## Technologies Used
@@ -51,13 +51,21 @@ The application can be deployed to any platform such as Vercel, Netlify, etc. Fo
 - **GET /scenarios**: Retrieve all scenarios.
 - **GET /scenarios/:id**: Retrieve a specific scenario by ID.
 - **POST /scenarios**: Create a new scenario.
-- **PUT /scenarios/:id**: Update an existing scenario.
 - **DELETE /scenarios/:id**: Delete a scenario by ID.
 - **GET /vehicles**: Retrieve all vehicles.
 - **GET /vehicles/:id**: Retrieve a specific vehicle by ID.
 - **POST /vehicles**: Create a new vehicle.
-- **PUT /vehicles/:id**: Update an existing vehicle.
 - **DELETE /vehicles/:id**: Delete a vehicle by ID.
+
+**ScreenShots** : 
+
+<img width="950" alt="image" src="https://github.com/JyothiKumar03/vehicle_senario_stimulation/assets/88045362/50351bd3-d1d0-409c-b31f-1cc4a7a8a04f">
+<img width="957" alt="image" src="https://github.com/JyothiKumar03/vehicle_senario_stimulation/assets/88045362/ccd3b4d2-7046-45ff-af9c-e8b8f8d5eebf">
+<img width="958" alt="image" src="https://github.com/JyothiKumar03/vehicle_senario_stimulation/assets/88045362/35f29775-0042-4962-bcbb-83277f48ff65">
+<img width="957" alt="image" src="https://github.com/JyothiKumar03/vehicle_senario_stimulation/assets/88045362/e5bac9ac-e0ed-466c-825a-5ffc1ebcbe7e">
+
+As the website is hosted on free service, it might not be that efficient when compared to the localhost setup. Reload the website multiple times to activate the status of the client & server.
+
 
 
 
