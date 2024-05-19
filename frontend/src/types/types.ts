@@ -1,16 +1,30 @@
-export interface Senario {
+export interface Scenario {
     id : number,
-    senarioName : string,
-    time : number
+    scenarioName : string,
+    scenarioTime : string,
+    vehicleList ?: Vehicle[];
 }
 
-type directions_allowed = 'Towards' | 'Backwards' | 'Upwards' | 'Downwards';
+export type directions_allowed = 'Towards' | 'Backwards' | 'Upwards' | 'Downwards';
 
-export interface Vechicle {
+export interface Vehicle {
     id : number,
-    vechicleName : string,
+    vehicleName : string,
     positionX : number,
     positionY : number,
     speed : number,
     directions : directions_allowed,
+    scenarioName : string,
+}
+
+export interface ScenarioState {
+    ScenarioList : Scenario[],
+    ScenarioID : { [key : string] : number}
+}
+
+export interface RootState {
+    scenario: {
+        ScenarioList: Scenario[];
+        ScenarioID: { [key: string]: number };
+    };
 }
