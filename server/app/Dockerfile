@@ -20,8 +20,11 @@ RUN npm install -g nodemon
 # Copy the rest of the source files into the image.
 COPY . .
 
+# Compile TypeScript files.
+RUN npm run build
+
 # Expose the port that the application listens on.
 EXPOSE 8080
 
 # Run the application using nodemon.
-CMD ["nodemon", "index.ts"]
+CMD ["nodemon", "dist/index.js"]
