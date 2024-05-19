@@ -20,5 +20,5 @@ COPY . .
 # Expose the port that the application listens on.
 EXPOSE 8080
 
-# Run the application using nodemon.
+# Define the default command to run when the container starts.
 CMD ["npm", "run", "dev"]
