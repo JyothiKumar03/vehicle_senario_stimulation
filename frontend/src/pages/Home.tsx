@@ -1,4 +1,3 @@
-import Sidebar from "../components/Sidebar"
 import { Simulation } from "../components/Simulation"
 
 const Home = () => {

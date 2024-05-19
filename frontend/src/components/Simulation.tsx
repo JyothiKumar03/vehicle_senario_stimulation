@@ -1,9 +1,9 @@
-import React, { useState, useEffect, ChangeEvent } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { RootState, Scenario, Vehicle } from '../types/types';
+import React, { useState, useEffect } from 'react';
+import {  useDispatch } from 'react-redux';
+import {Scenario, Vehicle } from '../types/types';
 import { deleteVehicle } from '../APIs/vehicleCalls';
 import '../App.css'
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { getAllScenarios } from '../APIs/scenarioCalls';
 import { setScenarios } from '../store/ScenarioSlice';
 
@@ -36,7 +36,7 @@ export const Simulation: React.FC = () => {
   );
 
   const [vehicleList2, setVehicleList2] = useState<Vehicle[]>(sortedVehicleList);
-  let vehicleIndex = 0;
+  // let vehicleIndex = 0;
 
 
   useEffect(() => {
@@ -143,7 +143,9 @@ export const Simulation: React.FC = () => {
   if (vehicleList?.length == 0 || vehicleList2.length == 0) {
     return (<div><h1>No Vehicles for Scenarios are Available</h1></div>)
   }
-
+  if(loading){
+    return (<div><h1>Loading</h1></div>)
+  }
 
   return (
     <div style={{ padding: '1rem', display: 'flex', flexDirection: 'column' }}>
@@ -193,7 +195,7 @@ export const Simulation: React.FC = () => {
                     <button style={{ border: 'none', fontSize: '24px', }} className='emoji-button'>📝</button>
                   </td>
                   <td>
-                    <button style={{ border: 'none', fontSize: '24px', }} className='emoji-button' onClick={(e: any) => handleDeleteEvent(vehicleItem.id)}>🗑️</button>
+                    <button style={{ border: 'none', fontSize: '24px', }} className='emoji-button' onClick={() => handleDeleteEvent(vehicleItem.id)}>🗑️</button>
                   </td>
                 </tr>
               ))}

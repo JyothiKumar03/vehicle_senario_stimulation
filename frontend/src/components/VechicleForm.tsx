@@ -3,7 +3,7 @@ import { addVehicle } from '../APIs/vehicleCalls';
 import { getAllScenarios } from '../APIs/scenarioCalls';
 import '../App.css';
 import { directions_allowed, Vehicle } from '../types/types';
-import { addvehicle , setScenarios } from '../store/ScenarioSlice';
+import { setScenarios } from '../store/ScenarioSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState, AppDispatch } from '../store/store';
  
@@ -85,6 +85,7 @@ export const AddVehicle: React.FC = () => {
   
       // Add the vehicle to the backend
       const response = await addVehicle(vehicle , selectedScenario);
+      console.log(response);
       // Fetch all scenarios again to update the state with the newly added vehicle
       const scenarios = await getAllScenarios();
       // Find the scenario to which the vehicle was added and update its vehicleList
