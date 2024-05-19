@@ -9,7 +9,7 @@ import Sidebar from './components/Sidebar';
 const App: React.FC = () => {
   return (
     <Router>
-      <div className="app">
+      <div className="App">
         <Sidebar />
         <div className="content">
           <Routes>

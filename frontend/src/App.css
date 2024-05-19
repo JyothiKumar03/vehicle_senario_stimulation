@@ -3,34 +3,226 @@
   text-align: center;
 }
 
-.app{
-  height: 100vh;
+.App{
   display: flex;
+  flex-direction: row;
+  height: 100vh;
 }
-.sidebar-head{
-  display: flex;
-  flex-direction: column;
+.Sidebar{
   width: 20%;
-  height: 100vh;
-  background-color : #a9a9a988;
+ height: 100%;
+ background-color: #C1C8D2;
+ color: black;
+ font-weight: bold;
   
 }
 
-.sidebar-body{
+/* .sidebar-body{
   color : black;
   padding: 0.5rem;
   font-size:larger;
   font-weight: 500;
   text-decoration: none;
   
-}
+} */
 
-.sidebar{
+/* .sidebar{
   color : black;
   padding: 0.5rem;
   font-size:large;
   font-weight: 500;
   text-decoration: none;
+} */
+.sidebar-list{
+  text-decoration: none;
+  color:inherit;
+}
+.Sidebar li{
+  margin-top: 1.5rem;
+  font-size: 20px;
+}
+
+.Sidebar ul{
+  list-style-type : none;
+  padding : 1.5rem;
+}
+.content{
+  background-color: #1E1E1E;
+  width: 100%;
+  color:white;
+  height: 100%;
+}
+/* Add Scenario */
+
+.AddScenario {
+  padding : 2rem;
+}
+.scenarioPath {
+  /* padding-bottom: 2rem; */
+  font-size: 20px; 
+  font-weight: bold; 
+  text-align: left; 
+  margin-left: 0;
+  padding-left: 0; 
+}
+
+
+.Scenario-heading{
+  font-size: 28px;
+  font-weight: bold;
+}
+.Scenario-body {
+  width: 90%;
+  padding: 10px;
+  margin-top : 20px;
+  margin-bottom: 20px;
+  margin-left : 60px;
+  display : flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  background-color :#333333;
+}
+.inputs{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+
+}
+
+.inputs label {
+  margin-bottom: 5px;
+}
+
+.inputs input {
+  font-size: 15px;
+  min-width: 20%;
+  border-radius: 5px;
+  border : 1px solid #ccc;
+  background-color : #1E1E1E;
+  padding: 10px;
+  color : white;
+}
+.button{
+  display: inline-block;
+  font-size: 15px;
+  padding: 12px 20px;
+  text-align: center;
+  text-decoration: none;
+  border : none;
+  color: white;
+  font-weight: bold;
+  border-radius : 3px;
+  margin-right: 10px;
+  cursor : pointer;
+}
+
+.AllScenario-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.AllScenario-body{
+  overflow-x : auto;
+}
+.scenario-table{
+  width: 100%;
+  border-collapse : collapse;
   
+}
+.scenario-table th,
+.scenario-table td{
+  /* border : 1px solid white; */
+  padding : 10px;
+  text-align: left;
   
+}
+
+.scenario-table thead{
+  background-color : #777777;
+  color : white;
+}
+
+.scenario-table tbody tr :nth-child{
+  background-color : white
+}
+/* .scenario-table tbody tr :nth-child(odd){
+  background-color : #777777
+} */
+
+.scenario-table tbody tr :hover{
+  background-color : #c3aeae ;
+}
+
+.emoji-button {
+  border: none;
+  background: none;
+  padding: 0;
+  font-size: 16px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; 
+  height: 100%; 
+}
+
+
+/* vehicle section */
+
+.Vehicle-body {
+  width : 90%;
+  padding : 10px;
+  margin-top: 20px;
+  margin-bottom: 200px;
+  margin-left : 60px;
+  box-sizing : border-box;
+  border : 1px solid #ccc;
+  background-color : #333333;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.direction {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  border-radius : 5px;
+  border : 1px solid #ccc;
+  background-color : #1E1E1E;
+  color: white;
+  font-size: 16px;
+  width: 13rem;
+}
+
+.plus{
+  --b : 4px;
+  width: 15px;
+  aspect-ratio: 1;
+  border : 10px solid #000;
+  background: conic-gradient(from 90deg at var(--b) var(--b),#000 90deg,#fff 0) 
+  calc(100% + var(--b)/2) calc(100% + var(--b)/2)/
+  calc(50%  + var(--b))   calc(50%  + var(--b));
+  display: inline-block;
+}
+.radius {
+border-radius: 50%;
+}
+
+.error {
+color: red;
+font-size: 0.9rem; /* Adjust the font size as needed */
 }

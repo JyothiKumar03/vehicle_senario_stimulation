@@ -36,14 +36,14 @@ export const addVehicle = (req: Request, res: Response) => {
         const data = readData();
         const newVehicle = {id: Date.now(), ...req.body}
         const {scenarioName} = req.params
-        console.log(scenarioName);
+        // console.log(scenarioName);
         data.vehicles.push(newVehicle);
         const scenario = data.scenarios.find((scenario : Scenario) => scenario.scenarioName === scenarioName)
-        console.log('before iterating - ',scenario);
+        // console.log('before iterating - ',scenario);
         if(scenario){
         scenario.vehicleList = scenario.vehicleList || [];
         scenario.vehicleList.push(newVehicle)
-        console.log('Scenario in vehicle - ', scenario)
+        // console.log('Scenario in vehicle - ', scenario)
         }
         writeData(data);
         return res.status(201).json({message : 'Vehicle added successfully'});
@@ -78,7 +78,7 @@ export const deleteVehicle = (req: Request, res: Response ) => {
             scenario.vehicleList = scenario.vehicleList.filter((vehicle: Vehicle) => vehicle.id !== vehicleId);
         }
         writeData(data);
-        return res.status(200).json({message : `vehicle deleted successfully`})
+        return res.status(200).json(data)
     } catch(error : any){
         return res.status(500).json({message : `Error occured in deleting vehicle`});
     }

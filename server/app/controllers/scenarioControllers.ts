@@ -64,12 +64,25 @@ export const deleteScenario = (req: Request, res: Response) => {
         const data = readData();
         data.scenarios = data.scenarios.filter((scenario : any) => scenario.id !== parseInt(req.params.id));
         writeData(data);
-        res.json({message: 'Scenario deleted successfully'});
+        res.status(200).json(data.scenarios);
     } catch(error: any){
         res.status(500).json({message: 'Error occured while deleting the scenario'});
     }
 }
 
+export const deleteAllScenarios = (req: Request, res : Response) => {
+  try{
+    // console.log('invoked funciton')
+    const data = readData();
+    data.scenarios = [];
+    data.vehicles = [];
+    writeData(data);
+    // console.log(data);
+    res.status(200).send(data.scenarios);
+  } catch(error : any){
+    res.status(500).json({message: 'Error occured while deleting all scenarios'});
+  }
+}
 
 export const addVehicleToScenario = (req: Request, res : Response) => {
   try{
@@ -86,7 +99,4 @@ export const addVehicleToScenario = (req: Request, res : Response) => {
   } catch(error : any){
     res.status(500).json({message : `Issue in adding vehicle to scenario`});
   }
-  
-
-  
 }

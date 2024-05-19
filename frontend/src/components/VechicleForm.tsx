@@ -152,6 +152,7 @@ export const AddVehicle: React.FC = () => {
             <input type="text" id="speed" value={speed} onChange={handleChange(setSpeed)} />
             {errors.speed && <div className='error'>{errors.speed}</div>}
           </div>
+          </div>
           <div className='row'>
             <div className='inputs'>
               <label htmlFor='positionX'>Position X</label>
@@ -175,11 +176,11 @@ export const AddVehicle: React.FC = () => {
               {errors.direction && <div className="error">{errors.direction}</div>}
             </div>
           </div>
-        </div>
+        
         <div className="button-div">
-          <button className='button' onClick={handleAddVehicle}>Add</button>
-          <button className='button' onClick={handleReset}>Reset</button>
-          {/* <button className='button' onClick={handleGoBack}>Go Back</button> */}
+          <button className='button' style={{ backgroundColor: '#5CB65E' }} onClick={handleAddVehicle}>Add</button>
+          <button className='button' style={{ backgroundColor: '#DF7B36' }} onClick={handleReset}>Reset</button>
+          {/* <button className='button' style={{ backgroundColor: '#4C9AB8' }} onClick={handleGoBack}>Go Back</button> */}
         </div>
       </div>
     </div>

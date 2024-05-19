@@ -25,3 +25,23 @@ export const getAllScenarios = async () => {
     throw error;
   }
 };
+
+export const deleteScenario = async (scenarioId : number) => {
+  try{
+    const response = await ScenarioAPIs.delete(`/scenarios/${scenarioId}`)
+    return response.data;
+  } catch(error : any){
+    console.log(`Error in deleting Scenario data Call`)
+    throw error;
+  }
+}
+
+export const deleteAllScenarios = async () => {
+  try{
+    const response = await ScenarioAPIs.delete(`/scenarios`);
+    return response.data;
+  } catch(error : any){
+    console.log(`Error in deleting all Scenarios data Call`)
+    throw error;
+  }
+}
